@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib', 'harpers_magazine_fetcher'))
+
+username = ENV['HARPERS_USER']
+password = ENV['HARPERS_PASS']
+# issue: YYYY/mm fmt
+issue    = ENV['HARPERS_ISSUE_DATE']
+save_directory = ENV['HARPERS_SAVE_DIRECTORY']
+
+h = HarpersMagazineFetcher.new(username, password, issue, save_directory)
+h.go!
